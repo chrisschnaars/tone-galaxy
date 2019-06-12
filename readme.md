@@ -11,7 +11,7 @@ In general, you don't need to do much here, which admittedly may not very fun. T
   - Key: Bubbles within the same key.
   - Unlike: Bubbles that share neither interval or key.
   - None: Bubbles don't seek anything.
-
+- Change the size of your browser (if you can). This will affect the space Bubbles have to move, the distance required for Bubbles to play sound, and potentially the size of the Bubble itself.
 
 ## Audio Notes
 Each Bubble is assigned a tone across four different keys, all based on the root tone (controlled by the tone slider).
