@@ -1,0 +1,64 @@
+/*
+ ALL INTERACTIVE CONTROLS
+*/
+
+h1 {
+  font-size: $headline-font-size;
+  line-height: $headline-line-height;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-weight: 700;
+  line-height: $headline-line-height;
+}
+
+// CONTENT
+p {
+  font-size: $content-font-size;
+  line-height: $content-line-height;
+}
+
+// CONTROL LABELS
+label, .control-label {
+  font-weight: 700;
+  font-size: $ui-label-font-size;
+  line-height: $ui-label-line-height;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.025rem;
+  display: block;
+  &:last-child {
+    margin-bottom: 0;
+    vertical-align: bottom;
+  }
+  // RESPONSIVE
+  @include bp($bp-2) {
+    font-size: $ui-label-font-size-sm;
+  }
+}
+
+// CTA LABEL STYLE
+.cta-label {
+  @extend .control-label;
+  font-size: 1.25rem;
+}
+
+// CONTENT STYLES
+p.content {
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// GLOBAL ONBOARDING TEXT STYLE
+.txt-onboarding {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+  color: $white;
+  @include bp($bp-2) {
+    font-size: 1.5rem;
+  }
+}

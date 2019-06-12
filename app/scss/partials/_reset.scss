@@ -1,0 +1,75 @@
+// CSS RESET
+// https://alligator.io/css/minimal-css-reset/
+
+html {
+  box-sizing: border-box;
+  font-size: $base-font-size;
+  font-family: 'Barlow', 'system-ui', Helvetica, sans-serif;
+  font-weight: 400;
+  color: $black;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bgColor-0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: $content-font-size;
+  line-height: $content-line-height;
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/**************************************
+SMALLEST SCREEN SETTINGS
+**************************************/
+
+// HIDE ON SMALLEST SCREENS
+.bp1-hidden {
+  @media (max-width: #{$bp-1}) {
+    display: none !important;
+  }
+}
+
+// SHOW ON SMALLEST SCREENS
+.bp1-visible {
+  @media (min-width: #{$bp-1}) {
+      display: none;
+    }
+}
+
+// HIDE ON SMALLEST SCREENS
+.bp736-hidden {
+  @media (max-width: #{$bp-736}) {
+    display: none !important;
+  }
+}
+
+// SHOW ON SMALLEST SCREENS
+.bp736-visible {
+  @media (min-width: #{$bp-736}) {
+      display: none;
+    }
+}
+
+// GLOBAL STYLES
+.m-btm-0 { margin-bottom: 0; }
+.m-btm-1 { margin-bottom: 0.5rem; }

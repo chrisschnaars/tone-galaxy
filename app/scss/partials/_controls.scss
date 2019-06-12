@@ -1,0 +1,305 @@
+/*
+ ALL INTERACTIVE CONTROLS
+*/
+
+// ===========================================
+// GLOBAL SETTINGS
+// ===========================================
+
+// GLOBAL STYLE FOR ALL CONTROL BUTTONS
+input, button {
+  // LAYOUT
+  height: $controls-height;
+
+  // APPEARANCE
+  background-color: $white;
+	border: 2px solid $black;
+  font-size: $ui-type-size;
+  line-height: $ui-line-height;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+// REMOVE FOCUS WHEN USER IS USING MOUSE
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}
+
+// ===========================================
+// GLOBAL BUTTON STYLES
+// ===========================================
+
+// DEFAULT BUTTON STYLES
+button {
+	// LAYOUT
+	display: inline-block;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+	margin: 0;
+
+	// APPERANCE
+  color: $black;
+	text-align: center;
+	text-decoration: none;
+  @include padding(0, 1.25);
+  @include btn-shadow;
+  @include border-radius($btn-border-radius);
+
+	// BEHAVIOR
+  // @include transition(background $animate-time-fast ease-in-out);
+}
+
+button:hover, button:focus {
+  // APPEARANCE
+  background-color: $gray-1;
+  box-shadow: none;
+}
+
+button:active {
+  background-color: $gray-2;
+}
+
+button > * {
+  pointer-events: none;
+}
+
+// ===========================================
+// PRIMARY CONTROL BUTTON STYLES
+// ===========================================
+
+.cta-button {
+  // LAYOUT
+  height: $primary-btn-size;
+  width: 90%;
+  margin: 2rem auto;
+  // APPERANCE
+  background-color: transparent;
+  // BEHAVIOR
+  @include transition(all $animate-time-fast ease-in-out);
+
+  &:hover {
+    @include transform(scale(1.025));
+    opacity: 0.75;
+    // width: 100%;
+  }
+  @include bp($bp-1) {
+    width: 100%;
+  }
+}
+
+// ===========================================
+// PRIMARY CONTROL BUTTON STYLES
+// ===========================================
+
+.primary-button {
+  // LAYOUT
+  height: $primary-btn-size;
+  width: $primary-btn-size;
+  // APPEARANCE
+  @include border-radius(100%);
+  // BACKGROUND ICON
+  background-size: 2rem !important;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+// ===========================================
+// ICON-ONLY BUTTON
+// ===========================================
+
+.icon-button {
+  // LAYOUT
+  width: $controls-height;
+
+  // APPEARANCE
+  @include border-radius(50%);
+  @include btn-shadow;
+  @include padding(0, 0);
+
+  // ICON
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.75rem;
+}
+
+.icon-button:active {
+  // background-color: $primary-color;
+}
+
+// ===========================================
+// TEXT BUTOTNS (LOOK LIKE LINKS)
+// ===========================================
+
+.text-button {
+  // LAYOUT
+	display: block;
+  height: $content-line-height;
+	// APPERANCE
+	border: none;
+  background: none;
+  box-shadow: none;
+	text-align: left;
+  @include border-radius(0);
+  border-bottom: 1px solid $black;
+  padding: 0;
+  // TEXT
+  font-size: $content-font-size;
+  line-height: $content-line-height;
+  color: $black;
+}
+
+.text-button:hover {
+  // APPEARANCE
+  background-color: $white;
+  border-bottom: none;
+}
+
+.text-button:focus {
+  // APPEARANCE
+  background-color: $white;
+}
+
+
+// ===========================================
+// TOGGLE GROUP
+// ===========================================
+
+// TOGGLE BUTTONS BEHAVIOR
+div.toggle-group {
+	// FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(flex-start);
+}
+
+// TOGGLE BUTTON MODIFICATION
+button.toggle {
+  // APPEARANCE
+  height: $controls-height-sm;
+  box-shadow: none;
+  border-left: none;
+  // margin-right: 0.25rem;
+  @include border-radius(0);
+  &:first-child {
+    border-left: 2px solid $black;
+    @include border-radii($btn-border-radius, 0, 0, $btn-border-radius);
+  }
+  &:last-child {
+    @include border-radii(0, $btn-border-radius, $btn-border-radius, 0);
+  }
+  // FLEX ITEM STYLES
+  @include flex(1);
+  @include bp($bp-2) {
+    // @include flex(0);
+  }
+}
+
+
+// ACTIVE CLASS FOR THE SELECTED BUTTON
+button.toggle.selected {
+	background-color: $gray-2;
+}
+
+// FIX WIDTH OF MINI TOGGLES
+.mini-toggle {
+  padding: 0 0.25rem;
+  width: 6rem;
+  &:active {
+    background-color: $white;
+  }
+}
+
+
+// ===========================================
+// SLIDER
+// ===========================================
+
+// RANGE SLIDER
+input[type=range] {
+	@include input-type-range;
+  margin: 0;
+  border: none;
+}
+
+// GROUP FOR SLIDER LABEL AND READOUT
+.slider-info-container {
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(space-between);
+}
+
+// RGB SLIDER VALUE READOUT
+.slider-readout {
+  margin-left: $spacing-unit / 2;
+}
+
+// ===========================================
+// SPECIFIC BUTTON STYLES
+// ===========================================
+
+// CLOSE BUTTON
+#about-modal-close {
+  // LAYOUT
+  position: absolute;
+  top: 1.25rem;
+  right: 3rem;
+  // SMALLEST SCREENS
+  @include bp1 {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+// ONBOARDING CTA
+#begin-cta {
+  color: $white;
+  border-color: $white;
+}
+
+#begin-cta:hover, #begin-cta:focus {
+  background: transparent;
+
+}
+
+// ===========================================
+// BUTTON ASSETS
+// ===========================================
+
+// PLAY BUTTON ICON
+.play-btn {
+  // ICON
+  background-image: url(../assets/icons/play.svg);
+}
+
+// UNMUTE BUTTON ICON
+.pause-btn {
+  // ICON
+  background-image: url(../assets/icons/pause.svg);
+}
+
+// CLOSE
+.close-btn {
+  // ICON
+  background-image: url(../assets/icons/close.svg);
+}
+
+// UNMUTE BUTTON ICON
+.refresh-btn {
+  // ICON
+  background-image: url(../assets/icons/refresh.svg);
+}
+
+// CLEAR BUTTON
+.clear-btn {
+  background-image: url(../assets/icons/clear.svg);
+}
+
+.info-btn {
+  //ICON
+  background-image: url(../assets/icons/help.svg);
+}
