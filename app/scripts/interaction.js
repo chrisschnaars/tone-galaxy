@@ -24,7 +24,7 @@ function setupInteraction() {
   toneControl.addEventListener("input", function(e) {
     // ADJUST ROOT FREQUENCY
     let v = Number(this.value);
-    setKey(b);
+    setKey(v);
     // UPDATE ARIA ATTRIBUTE
     toneControl.setAttribute('aria-valuenow', this.value);
   }, false);
