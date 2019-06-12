@@ -1,32 +1,28 @@
-# Bubble Tones
-Bubble Tones is a generative sound tool that produces a unique musical creation with each use.
+# Bubble Galaxy
+Bubble Galaxy is a generative sound experience. In Bubble Galaxy, each Bubble is on a mission to separate itself from most of the other Bubbles. At the same time, Bubbles are seeking out a subset of other Bubbles (controlled by you!).
 
-## How To Play
-In Bubble Tones, sounds are made when a Bubble hits a wall or the larger bubbles (aka Roadblocks). To add a Bubble, just click or tap anywhere on the screen. You can add up to six Bubbles at a time.
+Bubbles make sounds when they get within a predefined distance relative to the size of your web browser. This means that each moment of Bubble Galaxy is likely a completely unique sound experience.
 
-## Keyboard Shortcuts
-Q: Add a Bubble  
-P: Remove a Bubble  
-Spacebar: Play/Pause Bubble Tones
+## How to Play
+In general, you don't need to do much here, which admittedly may not very fun. This was designed more as a passive music-generation experience. Still, there are a few things you can do:
+- Adjust the tone slider. This will change the sound that Bubbles make when they get too close.
+- Toggle what Bubbles each Bubble seeks. The option here are:
+  - Note: Bubbles seek out other Bubbles set to the same intervals from their key's root tone (see more info below).
+  - Key: Bubbles within the same key.
+  - Unlike: Bubbles that share neither interval or key.
+  - None: Bubbles don't seek anything.
 
-## Audio Interactions
-The tones that play when Bubbles collide with the wall are selected from the root tone’s major and minor scales. The selection of the scale and tone has some randomness built in, which is intended to create even more unexpected variety in each composition.
 
-Here is a breakdown of how that works:
-The root frequency, which determines all other tones, is set at the start to 220 Hz, which is the A3 note in the equal-tempered scale. Users can adjust this frequency using the "Tone" slider. The lowest frequency is set to 110 Hz (A2), and the highest frequency is 330 Hz (A4).
+## Audio Notes
+Each Bubble is assigned a tone across four different keys, all based on the root tone (controlled by the tone slider).
 
-One of the ways tones are generated is when a Bubble collides with a wall. Each wall is set to play a note within the major or minor scale of the root frequency. Each wall has two note options (one with a higher probability of playing) that is selected randomly with each collision. The options are:
-Top wall: Root note or octave
-Right wall: Major third or minor third
-Bottom wall: Perfect fourth or minor seventh
-Left wall: Perfect fifth or sixth
+Each key increases in frequency in the following manner:
+- Key 1: Root tone
+- Key 2: Fifth above root
+- Key 3: One octave above root
+- Key 4: Fourth above octave of root
 
-The other way tones are generated is when a Bubble collides with a Roadblock (the larger, more stationary bubbles). There is one Roadblock for each wall, but Roadblocks are visible after a Bubble collides with each of the walls for the first time. Roadblocks will play the same note that their wall is set to, but at an octave lower (half the frequency).
-
-The tone selection for each wall and Roadblock happens with each collision, meaning that the sound will be in a constant state of flux. Hopefully this makes it enjoyable.
+Each key features the same set of intervals: root, third, fourth, fifth, octave.
 
 ## Thanks
-This project couldn't have been done without:
-* [p5js](https://p5js.org/)
-* [Daniel Shiffman](http://shiffman.net/)
-* [This bouncing ball example by Keith Peters](https://processing.org/examples/bouncybubbles.html)
+This project couldn't have been done without [Daniel Shiffman's](http://shiffman.net/) excellent (Nature of Code book)[https://natureofcode.com/], and his course I took on [Kadenze](https://www.kadenze.com/courses/the-nature-of-code/info).
