@@ -12,8 +12,8 @@ input, button {
   height: $controls-height;
 
   // APPEARANCE
-  background-color: $white;
-	border: 2px solid $black;
+  background-color: $gray-5;
+	border: 2px solid $gray-4;
   font-size: $ui-type-size;
   line-height: $ui-line-height;
   font-family: inherit;
@@ -41,7 +41,7 @@ button {
 	margin: 0;
 
 	// APPERANCE
-  color: $black;
+  color: $gray-3;
 	text-align: center;
 	text-decoration: none;
   @include padding(0, 1.25);
@@ -49,12 +49,12 @@ button {
   @include border-radius($btn-border-radius);
 
 	// BEHAVIOR
-  // @include transition(background $animate-time-fast ease-in-out);
+  @include transition(background-color $animate-time-fast ease-in-out);
 }
 
 button:hover, button:focus {
   // APPEARANCE
-  background-color: $gray-1;
+  background-color: $gray-4;
   box-shadow: none;
 }
 
@@ -185,7 +185,7 @@ button.toggle {
   // margin-right: 0.25rem;
   @include border-radius(0);
   &:first-child {
-    border-left: 2px solid $black;
+    border-left: 2px solid $gray-4;
     @include border-radii($btn-border-radius, 0, 0, $btn-border-radius);
   }
   &:last-child {
@@ -198,10 +198,10 @@ button.toggle {
   }
 }
 
-
 // ACTIVE CLASS FOR THE SELECTED BUTTON
 button.toggle.selected {
-	background-color: $gray-2;
+  color: $gray-2;
+	background-color: $black;
 }
 
 // FIX WIDTH OF MINI TOGGLES
@@ -273,22 +273,22 @@ input[type=range] {
 // PLAY BUTTON ICON
 .play-btn {
   // ICON
-  background-image: url(../assets/icons/play.svg);
+  background-image: url(../assets/icons/play-gray.svg);
 }
 
 // UNMUTE BUTTON ICON
 .pause-btn {
   // ICON
-  background-image: url(../assets/icons/pause.svg);
+  background-image: url(../assets/icons/pause-gray.svg);
 }
 
 // CLOSE
 .close-btn {
   // ICON
-  background-image: url(../assets/icons/close.svg);
+  background-image: url(../assets/icons/close-gray.svg);
 }
 
-// UNMUTE BUTTON ICON
+// REFRESH SETUP ICON
 .refresh-btn {
   // ICON
   background-image: url(../assets/icons/refresh.svg);
@@ -299,7 +299,7 @@ input[type=range] {
   background-image: url(../assets/icons/clear.svg);
 }
 
+// GET INFO BUTTON
 .info-btn {
-  //ICON
-  background-image: url(../assets/icons/help.svg);
+  background-image: url(../assets/icons/help-gray.svg);
 }

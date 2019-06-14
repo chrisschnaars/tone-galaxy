@@ -22,6 +22,7 @@ p {
 
 // CONTROL LABELS
 label, .control-label {
+  color: $gray-2;
   font-weight: 700;
   font-size: $ui-label-font-size;
   line-height: $ui-label-line-height;
@@ -41,6 +42,7 @@ label, .control-label {
 // CTA LABEL STYLE
 .cta-label {
   @extend .control-label;
+  color: $white;
   font-size: 1.25rem;
 }
 

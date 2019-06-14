@@ -18,7 +18,7 @@ let diffRepulsion, keyRepulsion, noteRepulsion;
 // BUBBLE COLOR SETTINGS
 // INDEX 0 IS FILL
 // INDEX 1 IS STROKE
-const bubbleColorDefault = ['#E3E6F2', '#BDC2CB'];
+const bubbleColorDefault = ['#22252A', '#555D6D'];
 const bubbleColors = [
   [ '#EC88C0', '#D96EB2'],
   [ '#48CFAE', '#37BB9B'],
@@ -159,7 +159,7 @@ function Bubble(x, y, m, k, n, wave, id) {
   this.activeTimer = 0;
   // OFF CANVAS POSITION
 	this.offX = this.noteId * (this.d*2);	// x position of offscreen canvas image
-	this.offY = 0; // y position of offscreen canvas image
+	this.offY = this.keyId * (this.d*2); // y position of offscreen canvas image
 }
 
 // DISPLAY, MOVE, AND BOUNCE THE BALL
@@ -180,7 +180,7 @@ Bubble.prototype.display = function() {
     image(offCanvas, this.pos.x - this.d/2, this.pos.y - this.d/2, this.d, this.d, this.offX, this.offY, this.d*2, this.d*2);
     this.activeTimer--;
   } else {
-    image(offCanvas, this.pos.x - this.d/2, this.pos.y - this.d/2, this.d, this.d, this.d*8*2, this.offY, this.d*2, this.d*2);
+    image(offCanvas, this.pos.x - this.d/2, this.pos.y - this.d/2, this.d, this.d, this.d*intervals.length*2, this.offY, this.d*2, this.d*2);
     this.active = false;
   }
 };

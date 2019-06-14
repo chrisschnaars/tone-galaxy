@@ -1,21 +1,21 @@
 /// The draghandle
-$thumb-color: $white !default;
+$thumb-color: $gray-4 !default;
 $thumb-radius: 0.5rem !default;
 $thumb-height: $controls-height-sm !default;
 $thumb-width: 1rem !default;
 $thumb-border-width: 2px !default;
-$thumb-border-color: $black !default;
+$thumb-border-color: $gray-4 !default;
 $thumb-shadow-size: 0.25rem !default;
 $thumb-shadow-blur: 20px !default;
 $thumb-shadow-color: rgba(0, 0, 0, 0) !default;
 
 // The range
-$track-color: $gray-2 !default;
+$track-color: $gray-5 !default;
 $track-radius: 0.25rem !default;
 $track-width: 100% !default;
 $track-height: 0.25rem !default;
 $track-border-width: 0px !default;
-$track-border-color: $gray-2 !default;
+$track-border-color: $gray-5 !default;
 $track-shadow-size: 0px !default;
 $track-shadow-blur: 0px !default;
 $track-shadow-color: rgba(0, 0, 0, 0) !default;

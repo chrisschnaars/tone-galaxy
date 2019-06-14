@@ -34,7 +34,7 @@ function setup() {
 
   // CREATE OFFSCREEN BG CANVAS
   bgCanvas = createGraphics(cw, ch);
-  bgCanvas.background(color('#F8F9FC'));
+  bgCanvas.background(color('#191B1F'));
 
   // SET GLOBAL DRAWING SETTINGS
   angleMode(DEGREES);

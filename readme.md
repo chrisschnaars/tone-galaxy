@@ -7,9 +7,9 @@ Bubbles make sounds when they get within a predefined distance relative to the s
 In general, you don't need to do much here, which admittedly may not very fun. This was designed more as a passive music-generation experience. Still, there are a few things you can do:
 - Adjust the tone slider. This will change the sound that Bubbles make when they get too close.
 - Toggle what Bubbles each Bubble seeks. The option here are:
-  - Note: Bubbles seek out other Bubbles set to the same intervals from their key's root tone (see more info below).
-  - Key: Bubbles within the same key.
-  - Unlike: Bubbles that share neither interval or key.
+  - Color: Bubbles seek out other Bubbles set to the same intervals from their key's root tone (see more info below).
+  - Shape: Bubbles within the same key.
+  - Unlike: Bubbles that share neither shape or color.
   - None: Bubbles don't seek anything.
 - Change the size of your browser (if you can). This will affect the space Bubbles have to move, the distance required for Bubbles to play sound, and potentially the size of the Bubble itself.
 

@@ -6,7 +6,7 @@ html {
   font-size: $base-font-size;
   font-family: 'Barlow', 'system-ui', Helvetica, sans-serif;
   font-weight: 400;
-  color: $black;
+  color: $white;
 }
 
 *, *:before, *:after {
@@ -16,7 +16,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: $bgColor-0;
+  background-color: $black;
   -webkit-font-smoothing: antialiased;
 }
 

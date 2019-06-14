@@ -18,7 +18,7 @@ function setSizes() {
   if (w > 1800 && h > 800) {
     bubbleFillSize = 32;
   } else if (w > 900 && h > 600) {
-    bubbleFillSize = 24
+    bubbleFillSize = 28;
   } else {
     bubbleFillSize = 16;
   }

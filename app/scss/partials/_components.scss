@@ -3,19 +3,12 @@
 // ===========================================
 
 // GLOBAL LINK STYLE
-a {
-  color: $black;
+a, a:visited {
+  color: $col-yel-fill;
   text-decoration: none;
-  border-bottom: 1px solid $black;
-
+  border-bottom: 1px solid $col-yel-fill;
 }
 
 a:hover {
-  // border-bottom: 1px solid $primary-color;
-  border: none;
   opacity: $hover-opacity;
-}
-
-a:visited {
-  color: $black;
 }

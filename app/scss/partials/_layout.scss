@@ -14,7 +14,7 @@ ONBOARDING
   visibility: visible;
   padding: 1rem;
   // APPEARAHCE
-  background-color: #D96EB2;
+  background-color: $col-pink;
   // FLEXBOX
   @include flexbox;
   @include flex-flow(column nowrap);
@@ -73,7 +73,7 @@ CONTROL BAR AND CONTROLS
   width: 100%;
   height: $control-bar-height;
   // APPERANCE
-  border-top: 2px solid $gray-4;
+  border-top: 2px solid $gray-5;
   // FLEXBOX
   @include flexbox;
   @include flex-flow(column nowrap);
@@ -143,7 +143,7 @@ ABOUT MODAL
   opacity: 0;
   padding: 1.25rem;
   // APPEARANCE
-  background-color: $white;
+  background-color: $black;
   display: none;
   // BEHAVIOR
   pointer-events: none;
@@ -156,7 +156,7 @@ ABOUT MODAL
 // OPEN MODAL
 .modal.visible {
   // APPEARANCE
-  opacity: 0.98;
+  opacity: 0.99;
   display: block;
   // BEHAVIOR
   pointer-events: auto;

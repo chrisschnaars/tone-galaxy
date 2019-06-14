@@ -36,7 +36,7 @@ let masterGainNode;
 const toneLength = 1;
 const fadeInTime = 0.035;
 const fadeOutTime = 0.045;
-const gainValue = 0.6;
+const gainValue = 0.75;
 
 // SETUP AUDIO
 function setupAudioPlayback() {
