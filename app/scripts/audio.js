@@ -34,9 +34,9 @@ let masterGainNode;
 
 // TONE SETTINGS
 const toneLength = 1;
-const fadeInTime = 0.035;
-const fadeOutTime = 0.045;
-const gainValue = 0.75;
+const fadeInTime = 0.025;
+const fadeOutTime = 0.015;
+const gainValue = 0.65;
 
 // SETUP AUDIO
 function setupAudioPlayback() {
@@ -44,15 +44,21 @@ function setupAudioPlayback() {
   setKey();
   // CREATE AUDIO CONTEXT
   createAudioContext();
-  // SET GAIN
+  // SET GAIN & PAN
   setupMasterGain();
 }
 
 // CREATE AUDIO CONTEXT WHEN USER CLICKS TO BEGIN
 function createAudioContext() {
-  // Create Audio Context
+  // CREATE AUDIO CONTEXT
   let AudioContext = window.AudioContext || window.webkitAudioContext;
-  audioCtx = new AudioContext();
+
+  // FEATURE DETECTION
+  if (AudioContext) {
+    audioCtx = new AudioContext();
+  } else {
+    alert("Sorry, but the Web Audio API is not supported by your browser. Please, consider upgrading to the latest version or downloading Google Chrome or Mozilla Firefox");
+  }
 }
 
 // MASTER GAIN
@@ -63,8 +69,13 @@ function setupMasterGain() {
   masterGainNode.gain.value = gainValue;
 }
 
+
 // PLAY TONE
 function playTone(b) {
+
+  // SET CURRENT TIME
+  let time = audioCtx.currentTime;
+
   // SET PERIODIC WAVE FORM
   let wave = b.wave;
   let w = audioCtx.createPeriodicWave(wave.real, wave.imag);
@@ -73,27 +84,32 @@ function playTone(b) {
   let osc = audioCtx.createOscillator();
   osc.setPeriodicWave(w);
 
-  // CREATE GAIN NODE AND CONNECT OSCILLATOR
+  // CREATE GAIN NODE
   let gain = audioCtx.createGain();
-  let panNode = audioCtx.createStereoPanner();
 
   // CONNECT OSCILLATOR, GAIN, AND PAN
   osc.connect(gain);
-  gain.connect(panNode);
-  panNode.connect(masterGainNode);
+
+  // PAN
+  if (audioCtx.createStereoPanner) {
+    let panNode = audioCtx.createStereoPanner();
+    gain.connect(panNode);
+    panNode.connect(masterGainNode);
+    let panValue = remapNumber(b.pos.x, 0, cw, -1, 1);
+    panNode.pan.setValueAtTime(panValue, time);
+  } else {
+    gain.connect(masterGainNode);
+  }
 
   // CONFIGURE OSC
-  let time = audioCtx.currentTime;
-  let panValue = remapNumber(b.pos.x, 0, cw, -1, 1);
   osc.frequency.value = rootTones[b.keyId] * intervals[b.noteId];
   gain.gain.linearRampToValueAtTime(0, time);
-  panNode.pan.setValueAtTime(panValue, time);
   gain.gain.linearRampToValueAtTime(gainValue, time + fadeInTime);
 
   // PLAY
   osc.start(time);
 
   // STOP
-  gain.gain.linearRampToValueAtTime(0, time + toneLength + fadeOutTime);
+  gain.gain.linearRampToValueAtTime(0, time + fadeInTime + toneLength + fadeOutTime);
   osc.stop(time + toneLength);
 }

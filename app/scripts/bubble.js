@@ -121,18 +121,24 @@ function getBubbleDist(b1, b2) {
 }
 
 function updateAttractForces(mode) {
+  // ATTRACTION AND REPULSION COEFFICIENTS
   const repulsionValue = 1.35;
   const attractionValue = 0.25;
 
   // SET ALL COEFFICIENTS TO REPULSION VALUE
   diffRepulsion = keyRepulsion = noteRepulsion = repulsionValue;
 
+  // CHECK MODE VALUE
+  if (mode > 3) {
+    mode = 0;
+  }
+
   // SET FORCE VALUES
-  if (mode === "note") {
+  if (mode == 0) {
     noteRepulsion = attractionValue;
-  } else if (mode === "key") {
+  } else if (mode == 1) {
     keyRepulsion = attractionValue;
-  } else if (mode === "unlike") {
+  } else if (mode == 2) {
     diffRepulsion = attractionValue;
   }
 }

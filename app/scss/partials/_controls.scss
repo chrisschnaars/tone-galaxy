@@ -14,8 +14,6 @@ input, button {
   // APPEARANCE
   background-color: $gray-5;
 	border: 2px solid $gray-4;
-  font-size: $ui-type-size;
-  line-height: $ui-line-height;
   font-family: inherit;
   cursor: pointer;
 }
@@ -26,6 +24,10 @@ body:not(.user-is-tabbing) input:focus,
 body:not(.user-is-tabbing) select:focus,
 body:not(.user-is-tabbing) textarea:focus {
   outline: none;
+}
+
+.button--fixed-size {
+  width: 6rem;
 }
 
 // ===========================================
@@ -41,7 +43,6 @@ button {
 	margin: 0;
 
 	// APPERANCE
-  color: $gray-3;
 	text-align: center;
 	text-decoration: none;
   @include padding(0, 1.25);
@@ -179,7 +180,7 @@ div.toggle-group {
 // TOGGLE BUTTON MODIFICATION
 button.toggle {
   // APPEARANCE
-  height: $controls-height-sm;
+  height: $controls-height;
   box-shadow: none;
   border-left: none;
   // margin-right: 0.25rem;

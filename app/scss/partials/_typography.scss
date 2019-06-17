@@ -20,23 +20,26 @@ p {
   line-height: $content-line-height;
 }
 
-// CONTROL LABELS
-label, .control-label {
+// LABEL FOR EACH CONTROL EMEMENT
+.control-label {
   color: $gray-2;
   font-weight: 700;
   font-size: $ui-label-font-size;
   line-height: $ui-label-line-height;
-  margin-bottom: 0.25rem;
-  letter-spacing: 0.025rem;
-  display: block;
-  &:last-child {
-    margin-bottom: 0;
-    vertical-align: bottom;
-  }
+
   // RESPONSIVE
   @include bp($bp-2) {
     font-size: $ui-label-font-size-sm;
   }
+}
+
+// CONTROL WITHIN EACH UI ELEMENT
+.control-ui-label {
+  color: $gray-2;
+  font-weight: 700;
+  font-size: $ui-font-size;
+  line-height: $ui-line-height;
+  text-transform: capitalize;
 }
 
 // CTA LABEL STYLE

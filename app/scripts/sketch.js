@@ -68,7 +68,7 @@ function draw() {
 
     // DRAW BUBBLES
     bubbles[i].render();
-  }
+   }
 }
 
 // RESET CANVAS WHEN WINDOW IS RESIZED

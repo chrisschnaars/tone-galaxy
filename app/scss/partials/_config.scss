@@ -21,12 +21,12 @@ $content-line-height:     1.35 !default;
 $content-max-width:       38rem !default;
 
 // CONTROL BUTTON LABELS
-$ui-label-font-size:      .9375rem !default;
+$ui-label-font-size:      1rem !default;
 $ui-label-font-size-sm:   .8125rem !default;
-$ui-label-line-height:    1.25rem !default;
+$ui-label-line-height:    1rem !default;
 
 // CONTROL BUTTON TYPE
-$ui-type-size:            0.875rem !default;
+$ui-font-size:            1rem !default;
 $ui-line-height:          1rem !default;
 
 
@@ -49,8 +49,7 @@ $controls-max-width:        72rem !default;
 
 // CONTROLS
 $controls-max-height:       4rem !default;  // height of control + label
-$controls-height:           2.75rem !default; // height of each control
-$controls-height-sm:        2.5rem !default; // height of each control
+$controls-height:           2.5rem !default; // height of each control
 $primary-btn-size:          4rem !default; // HEIGHT OF PRIM BUTTON ONLY
 
 /**************************************

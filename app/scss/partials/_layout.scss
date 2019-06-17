@@ -104,8 +104,11 @@ INDIVIDUAL CONTROL ELEMENT CONTAINERS
 
 // GLOBAL STYLES FOR ALL CONTAINERS
 .btn-element, .control-element {
+  // FLEXBOX
+  @include flexbox;
+  @include flex-flow(column nowrap);
+  @include justify-content(flex-start);
   // LAYOUT
-  // width: 100%;
   margin-left: 2rem;
   @include bp($bp-1) {
     margin-left: 1rem;
@@ -115,15 +118,26 @@ INDIVIDUAL CONTROL ELEMENT CONTAINERS
   }
 }
 
-// CONTAINER FOR BUTTON ELEMENTS
+// CONTAINER FOR BUTTON ELEMENT
 .btn-element {
   // LAYOUT
   text-align: center;
   @include flex(0);
 }
 
+// CONTAINER FOR CONTROL LABEL AND UI
 .control-element {
-  @include flex(1 0 auto);
+  @include flex(1 1 auto);
+}
+
+// CONTAINER FOR UI LABEL
+.control-label-container {
+  &:first-child {
+    margin-bottom: 0.25rem;
+  }
+  &:last-child {
+    margin-top: 0.25rem;
+  }
 }
 
 /**************************************

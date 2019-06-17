@@ -50,39 +50,52 @@
         </div>
 
         <!-- TONE CONTROL -->
-        <div class="control-element tone-control bp736-hidden">
-          <div class="slider-info-container">
+        <div class="control-element tone-control">
+          <!-- LABEL -->
+          <div class="control-label-container">
             <label for="tone" class="control-label">Tone</label>
           </div>
+          <!-- CONTROL -->
           <input name="tone" id="tone" type="range" min="40" max="109" value="65" step="1" aria-valuemin="40" aria-valuemax="109" aria-valuenow="65">
         </div>
 
-        <!-- ATTRACTION SELECTOR -->
+        <!-- FULL ATTRACTION SELECTOR -->
         <div class="control-element">
-          <!-- CONTROL LABEL -->
-          <label class="t-ctr-bp1">Bubble Attraction</label>
+          <!-- LABEL -->
+          <div class="control-label-container">
+            <label class="control-label">Attraction</label>
+          </div>
+
           <!-- TOGGLE GROUP -->
-          <div class="toggle-group attraction-selector">
-            <button name="attraction-selector" value="note" type="button" class="toggle selected">
-                <span class="control-label">Color</span>
+          <div class="toggle-group attraction-selector bp736-hidden">
+            <button name="attraction-selector" value="0" type="button" class="toggle selected">
+                <span class="control-ui-label">Color</span>
             </button>
-            <button name="attraction-selector" value="key" type="button" class="toggle">
-                <span class="control-label">Shape</span>
+            <button name="attraction-selector" value="1" type="button" class="toggle">
+                <span class="control-ui-label">Shape</span>
             </button>
-            <button name="attraction-selector" value="unlike" type="button" class="toggle">
-                <span class="control-label">Unlike</span>
+            <button name="attraction-selector" value="2" type="button" class="toggle">
+                <span class="control-ui-label">Unlike</span>
             </button>
-            <button name="attraction-selector" value="off" type="button" class="toggle">
-                <span class="control-label">None</span>
+            <button name="attraction-selector" value="3" type="button" class="toggle">
+                <span class="control-ui-label">None</span>
             </button>
           </div>
+
+          <!-- MINI ATTRACTION SELECTOR -->
+          <button type="button" class="bp736-visible attraction-selector-mini button--fixed-size" name="attraction-selector-mini" value="0">
+            <span class="control-ui-label attraction-mini-label">Color</span>
+          </button>
         </div>
 
         <!-- ABOUT MODAL BUTTON -->
         <div class="btn-element">
-          <button id="about-modal-open" class="icon-button info-btn" type="button" name="about">
-          </button>
-          <label for="about-modal-open" class="control-label">Info</label>
+          <!-- LABEL -->
+          <div class="control-label-container">
+            <label for="about-modal-open" class="control-label">Info</label>
+          </div>
+
+          <button id="about-modal-open" class="icon-button info-btn" type="button" name="about"></button>
         </div>
 
       </div>

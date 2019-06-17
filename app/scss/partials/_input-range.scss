@@ -1,24 +1,24 @@
 /// The draghandle
-$thumb-color: $gray-4 !default;
-$thumb-radius: 0.5rem !default;
-$thumb-height: $controls-height-sm !default;
-$thumb-width: 1rem !default;
-$thumb-border-width: 2px !default;
-$thumb-border-color: $gray-4 !default;
-$thumb-shadow-size: 0.25rem !default;
-$thumb-shadow-blur: 20px !default;
-$thumb-shadow-color: rgba(0, 0, 0, 0) !default;
+$thumb-color: $gray-4;
+$thumb-radius: 0.5rem;
+$thumb-height: $controls-height;
+$thumb-width: 1rem;
+$thumb-border-width: 0;
+$thumb-border-color: $gray-4;
+$thumb-shadow-size: 0.25rem;
+$thumb-shadow-blur: 20px;
+$thumb-shadow-color: rgba(0, 0, 0, 0);
 
 // The range
-$track-color: $gray-5 !default;
-$track-radius: 0.25rem !default;
-$track-width: 100% !default;
-$track-height: 0.25rem !default;
-$track-border-width: 0px !default;
-$track-border-color: $gray-5 !default;
-$track-shadow-size: 0px !default;
-$track-shadow-blur: 0px !default;
-$track-shadow-color: rgba(0, 0, 0, 0) !default;
+$track-color: $gray-5;
+$track-radius: 0.25rem;
+$track-width: 100%;
+$track-height: 0.25rem;
+$track-border-width: 0;
+$track-border-color: $gray-5;
+$track-shadow-size: 0px;
+$track-shadow-blur: 0px;
+$track-shadow-color: rgba(0, 0, 0, 0);
 
 
 @mixin track {
@@ -64,7 +64,7 @@ $track-shadow-color: rgba(0, 0, 0, 0) !default;
     @include thumb;
     -webkit-appearance: none;
     // margin-top: ($track-height) / (2 - $thumb-height / 2);
-    margin-top: -1rem;
+    margin-top: -1.125rem;
 
   }
 

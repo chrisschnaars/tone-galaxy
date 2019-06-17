@@ -27,10 +27,11 @@ function setSizes() {
   bubbleSize = bubbleFillSize + bubbleStrokeSize;
 
   // SET DESIRED SEPARATION
+  const sepCoefficient = 0.11;
   if (w < h) {
-    desiredSeparation = h * 0.10;
+    desiredSeparation = h * sepCoefficient;
   } else {
-    desiredSeparation = w * 0.10;
+    desiredSeparation = w * sepCoefficient;
   }
 
   // SET TONE SEPARATION
