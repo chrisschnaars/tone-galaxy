@@ -1,5 +1,5 @@
 # Bubble Galaxy
-Bubble Galaxy is a generative sound experience. In Bubble Galaxy, each Bubble is on a mission to separate itself from most of the other Bubbles. At the same time, Bubbles are seeking out a subset of other Bubbles (controlled by you!).
+Bubble Galaxy is a generative sound experience. In Bubble Galaxy, each Bubble (which can take the form of ellipses, rectangles, and triangles) is on a mission to separate itself from most of the other Bubbles. At the same time, Bubbles are seeking out a subset of other Bubbles (controlled by you!).
 
 Bubbles make sounds when they get within a predefined distance relative to the size of your web browser. This means that each moment of Bubble Galaxy is likely a completely unique sound experience.
 
@@ -14,6 +14,8 @@ In general, you don't need to do much here, which admittedly may not very fun. T
 - Change the size of your browser (if you can). This will affect the space Bubbles have to move, the distance required for Bubbles to play sound, and potentially the size of the Bubble itself.
 
 ## Audio Notes
+
+### Tone Assignment
 Each Bubble is assigned a tone across four different keys, all based on the root tone (controlled by the tone slider).
 
 Each key increases in frequency in the following manner:
@@ -23,6 +25,9 @@ Each key increases in frequency in the following manner:
 - Key 4: Fourth above octave of root
 
 Each key features the same set of intervals: root, third, fourth, fifth, octave.
+
+### Stereo
+If you're using headphones or a quality hifi system, you should notice that the placement of the audio output within the stereo field changes with each tone. The amount of panning to the left or right is dependent on the position of the Bubble.
 
 ## Thanks
 This project couldn't have been done without [Daniel Shiffman's](http://shiffman.net/) excellent (Nature of Code book)[https://natureofcode.com/], and his course I took on [Kadenze](https://www.kadenze.com/courses/the-nature-of-code/info).
