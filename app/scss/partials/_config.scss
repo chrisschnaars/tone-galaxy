@@ -5,7 +5,7 @@ TYPOGRAPHY & SIZING
 $base-font-size:         16px;
 
 // FONT WEIDGHTS
-$font-weight-heavy:      700;
+$font-weight-heavy:      600;
 $font-weight-normal:     400;
 
 // FONT SIZES
@@ -46,7 +46,7 @@ $control-bar-height:      6rem; // Max height of control bar
 // CONTROL PANEL
 $controls-max-width:      72rem;
 $controls-max-height:     4rem;  // height of control + label
-$controls-height:         2.5rem; // height of each control
+$controls-height:         2.75rem; // height of each control
 $primary-btn-size:        4rem; // HEIGHT OF PRIM BUTTON ONLY
 
 
@@ -68,6 +68,13 @@ $black:         #191B1F;
 // BUBBLE COLORS
 $col-pink: #D96EB2;
 $col-yel-fill: #FFCF55;
+
+// CONTROL PRESETS
+$btn-fill-color: $gray-5;
+$btn-fill-color--hover: $gray-4;
+$btn-fill-color--active: $black;
+$btn-border-color: $gray-4;
+$btn-text-color: $white;
 
 // GLOBAL HOVER OPACITY VALUE
 $hover-opacity: 0.85;

@@ -30,18 +30,25 @@ p {
 // CONTROL LABELS
 .control-bar__control-label, .control-bar__control-readout {
   font-size: $control-label-font-size;
-  letter-spacing: 0.25px;
+  font-weight: $font-weight-heavy;
+  letter-spacing: 0.45px;
   line-height: $control-label-line-height;
   vertical-align: top;
 }
-//
-// // GLOBAL ONBOARDING TEXT STYLE
-// .onboarding__content {
-//   font-size: 2rem;
-//   margin-bottom: 0.5rem;
-//   line-height: 1.25;
-//   color: $white;
-//   @include bp($bp-2) {
-//     font-size: 1.5rem;
-//   }
-// }
+
+// BUTTON TEXT
+.btn-label {
+  color: $btn-text-color;
+  font-family: inherit;
+  font-size: $btn-font-size;
+  font-weight: $font-weight-heavy;
+  letter-spacing: 0.45px;
+  line-height: $btn-line-height;
+}
+
+.btn-label--cta {
+  font-size: $font-size-18;
+  letter-spacing: inherit;
+  line-height: 1;
+  text-transform: uppercase;
+}

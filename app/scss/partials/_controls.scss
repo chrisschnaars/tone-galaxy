@@ -51,19 +51,16 @@ body:not(.user-is-tabbing) textarea:focus {
 .btn--cta {
   background-color: transparent;
   border-color: $white;
-  font-size: $font-size-18;
-  font-weight: $font-weight-heavy;
   height: $primary-btn-size;
-  line-height: 1;
   margin: 2rem 0 1rem;
   @include transition(all $animate-time-fast ease-in-out);
   width: 90%;
 
   &:hover {
     background-color: transparent;
+    letter-spacing: 4px;
     opacity: 0.95;
     @include transform(scale(1.025));
-
   }
 
   @include bp($bp-1) {
@@ -109,16 +106,10 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 
 // ACTIVE CLASS FOR THE SELECTED BUTTON
-.btn--toggle-selected {
+.btn--toggle-selected, .btn--toggle-selected:hover, .btn--toggle-selected:focus {
 	background-color: $black;
-	color: $white;
   opacity: 1;
 }
-
-.btn--toggle-selected:hover, .btn--toggle-selected:focus {
-  background-color: $black;
-}
-
 
 
 /*------------------------------------*\

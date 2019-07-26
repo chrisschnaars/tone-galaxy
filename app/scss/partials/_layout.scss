@@ -36,9 +36,9 @@
 
 
 
-/**************************************
-MAIN INTERACTION AREA
-**************************************/
+/*------------------------------------*\
+  CANVAS CONTAINER
+\*------------------------------------*/
 
 // CONTAINER THAT HOLDS TONE BLOCKS AND TONE ORBS
 #main-container {
@@ -101,7 +101,7 @@ canvas {
 }
 
 .control-bar__control-label-container {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .control-bar__control-label-container--with-readout {
