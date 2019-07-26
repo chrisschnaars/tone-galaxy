@@ -6,7 +6,7 @@ INTERACTIVITY
 function setupInteraction() {
 
   // PLAY/PAUSE BUTTON
-  let playToggle = document.querySelector('#play-toggle');
+  let playToggle = document.querySelector('.js-play-toggle');
   playToggle.addEventListener("click", function(e) {
     e.target.blur();
     togglePlaying();
@@ -20,7 +20,7 @@ function setupInteraction() {
   },false);
 
   // TONE SLIDER
-  let toneControl = document.querySelector("#tone");
+  let toneControl = document.querySelector(".js-tone-control");
   toneControl.addEventListener("input", function(e) {
     // ADJUST ROOT FREQUENCY
     let v = Number(this.value);
@@ -30,7 +30,8 @@ function setupInteraction() {
   }, false);
 
   // ATTRACTION SELECTOR
-  document.querySelector('.attraction-selector').addEventListener('click', function(e){
+  document.querySelector('.js-attraction-selector').addEventListener('click', function(e){
+    e.target.blur();
     let id = Number(e.target.value);
     updateAttractForces(id);
     updateAttractionToggleStatus(id);
@@ -38,7 +39,7 @@ function setupInteraction() {
   }, false);
 
   // MOBILE ATTRACTION SELECTOR
-  document.querySelector(".attraction-selector-mini").addEventListener('click', function(e){
+  document.querySelector(".js-attraction-selector-mini").addEventListener('click', function(e){
     let id = Number(e.target.value) + 1;
     updateAttractForces(id);
     updateAttractionToggleStatus(id);
@@ -48,15 +49,13 @@ function setupInteraction() {
   }, false);
 
   // ABOUT BUTTON - SHOW ABOUT MODAL
-  document.querySelector("#about-modal-open").addEventListener("click", function(e) {
-    document.querySelector("#about-modal").classList.add("visible");
-    e.target.blur();
+  document.querySelector(".js-about-open-btn").addEventListener("click", function() {
+    document.querySelector(".about").classList.add("about--visible");
   }, false);
 
-  // CLOSE ABOUT MODAL BUTTON
-  document.querySelector("#about-modal-close").addEventListener("click", function(e) {
-    document.querySelector("#about-modal").classList.remove("visible");
-    e.target.blur();
+  // CLOSE ABOUT TOGGLEL
+  document.querySelector(".js-about-close-btn").addEventListener("click", function() {
+    document.querySelector(".about").classList.remove("about--visible");
   }, false);
 }
 
@@ -80,37 +79,40 @@ ACTIVITY UPDATES
 // TOGGLE PLAYING
 function togglePlaying() {
   // DOM ELEMENTS
-  const playToggle = document.querySelector('#play-toggle');
+  const playToggle = document.querySelector('.js-play-toggle');
 
   // TOGGLE PLAYING
   if (looping) {
     // STOP PLAYING
     noLoop();
     // TOGGLE BUTTON CLASS
-    playToggle.classList.remove("pause-btn");
-    playToggle.classList.add("play-btn");
+    playToggle.classList.remove("btn--pause");
+    playToggle.classList.add("btn--play");
     looping = false;
   } else {
     loop();
-    playToggle.classList.remove("play-btn");
-    playToggle.classList.add("pause-btn");
+    playToggle.classList.remove("btn--play");
+    playToggle.classList.add("btn--pause");
     looping = true;
   }
 }
 
 // UPDATE TOGGLE BUTTON GROUP FOR ACTIVE SELECTION
 function updateAttractionToggleStatus(id) {
+  console.log(id);
+
   // REMOVE SELECTED CLASS FROM ALL TOGGLES
-  let toggleButtons = document.querySelectorAll('.toggle');
+  let toggleButtons = document.querySelectorAll('.btn--toggle');
+
   for (var i=0; i<toggleButtons.length; i++) {
-    toggleButtons[i].classList.remove('selected');
+    toggleButtons[i].classList.remove('btn--toggle-selected');
   }
 
   // ADD SELECTED CLASS TO SELECTED
   if (id >= toggleButtons.length) {
     id = 0;
   }
-  toggleButtons[id].classList.add( "selected" );
+  toggleButtons[id].classList.add('btn--toggle-selected');
 }
 
 // UPDATE MINI ATTRACTION BUTTON
@@ -122,12 +124,10 @@ function updateAttractionButtoneStatus(id) {
     id = 0;
   }
 
-  // UDPATE BUTTON VALUE
-  const toggleButtonMini = document.querySelector('.attraction-selector-mini');
+  // UDPATE BUTTON VALUE & LABEL
+  const toggleButtonMini = document.querySelector('.js-attraction-selector-mini');
   toggleButtonMini.value = id;
-
-  // UPDATE BUTTON COPY
-  const toggleButtonLabel = document.querySelector('.attraction-mini-label');
-  toggleButtonLabel.innerHTML = attractionModes[id];
+  let l = attractionModes[id].charAt(0).toUpperCase() + attractionModes[id].slice(1);
+  toggleButtonMini.innerHTML = l;
 
 }

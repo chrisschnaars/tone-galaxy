@@ -1,69 +1,47 @@
-/*
- ALL INTERACTIVE CONTROLS
-*/
+/*------------------------------------*\
+  TYPE
+\*------------------------------------*/
 
-h1 {
-  font-size: $headline-font-size;
-  line-height: $headline-line-height;
-  font-weight: 700;
-  margin-bottom: 2rem;
+h1, h2, h3 {
+  font-size: $font-size-32;
+  margin-bottom: 1rem;
 }
 
-h2 {
-  font-weight: 700;
-  line-height: $headline-line-height;
+h3 {
+  font-weight: $font-weight-normal;
 }
 
-// CONTENT
 p {
   font-size: $content-font-size;
-  line-height: $content-line-height;
-}
+  line-height: 1.45;
+  margin-bottom: calc(1.45 * #{$content-font-size});
 
-// LABEL FOR EACH CONTROL EMEMENT
-.control-label {
-  color: $gray-2;
-  font-weight: 700;
-  font-size: $ui-label-font-size;
-  line-height: $ui-label-line-height;
-
-  // RESPONSIVE
-  @include bp($bp-2) {
-    font-size: $ui-label-font-size-sm;
+  @include bp1 {
+    font-size: $content-font-size-sm;
+    line-height: 1.45;
+    margin-bottom: calc(1.45 * #{$content-font-size-sm});
   }
-}
 
-// CONTROL WITHIN EACH UI ELEMENT
-.control-ui-label {
-  color: $gray-2;
-  font-weight: 700;
-  font-size: $ui-font-size;
-  line-height: $ui-line-height;
-  text-transform: capitalize;
-}
-
-// CTA LABEL STYLE
-.cta-label {
-  @extend .control-label;
-  color: $white;
-  font-size: 1.25rem;
-}
-
-// CONTENT STYLES
-p.content {
-  margin-bottom: 1rem;
-  &:last-child {
+  &:last-child, &:only-child {
     margin-bottom: 0;
   }
 }
 
-// GLOBAL ONBOARDING TEXT STYLE
-.txt-onboarding {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.25;
-  color: $white;
-  @include bp($bp-2) {
-    font-size: 1.5rem;
-  }
+// CONTROL LABELS
+.control-bar__control-label, .control-bar__control-readout {
+  font-size: $control-label-font-size;
+  letter-spacing: 0.25px;
+  line-height: $control-label-line-height;
+  vertical-align: top;
 }
+//
+// // GLOBAL ONBOARDING TEXT STYLE
+// .onboarding__content {
+//   font-size: 2rem;
+//   margin-bottom: 0.5rem;
+//   line-height: 1.25;
+//   color: $white;
+//   @include bp($bp-2) {
+//     font-size: 1.5rem;
+//   }
+// }

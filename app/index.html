@@ -3,8 +3,8 @@
   <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title data-head="true">Sound Tools | Bubble Galaxy</title>
-    <meta name="description" content="Bubble Galaxy is generative music-making tool for kids and adults." data-head="true"/>
+    <title data-head="true">Bubble Galaxy</title>
+    <meta name="description" content="Bubble Galaxy is a space-aged generative music-making tool for kids and adults." data-head="true"/>
 
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="css/main.min.css" type="text/css">
@@ -25,104 +25,138 @@
   </head>
 
   <body>
+
+
     <!-- ONBOARDING -->
-    <div class="onboarding-container">
-      <div class="onboarding-content-container">
-        <h1 class="txt-onboarding">This is Bubble Galaxy</h1>
-        <p class="txt-onboarding">Bubbles try to seek and separate from each other, and make sounds when they get too close.</p>
-        <button id="begin-cta" class="cta-button" type="button" name="begin">
-          <span class="cta-label">Start</span>
+    <div class="onboarding">
+
+      <div class="onboarding__content-container">
+        <h1 class="onboarding__content">Bubble Galaxy</h1>
+        <h3 class="onboarding__content">Bubbles seek and separate from each other, and make sounds when they get too close.</h3>
+        <button class="onboarindg__cta btn btn--cta js-onboarding-cta" type="button" name="Begin">
+          <span class="onboarindg__cta-btn-label">Start</span>
         </button>
+
       </div>
+
     </div>
+
+
 
     <!-- CANVAS CONTAINER -->
     <div id="main-container"></div>
 
+
+
     <!-- CONTROL PANEL -->
-    <div id="control-bar">
-      <div id="controls-container">
+    <section class="control-bar">
+      <div class="control-bar__inner-container">
 
         <!-- PLAY/PAUSE BUTTON -->
-        <div class="btn-element">
-          <button id="play-toggle" class="primary-button pause-btn" type="button" name="mute">
-          </button>
+        <div class="control-bar__control-container control-bar__control-container--btn">
+          <div class="control-bar__control control-bar__control--primary">
+            <button class="control-bar__btn btn btn--icon btn--primary btn--pause js-play-toggle" type="button" name="mute" aria-label="Play">
+            </button>
+          </div>
         </div>
 
         <!-- TONE CONTROL -->
-        <div class="control-element tone-control">
-          <!-- LABEL -->
-          <div class="control-label-container">
-            <label for="tone" class="control-label">Tone</label>
+        <div class="control-bar__control-container">
+
+          <div class="control-bar__control-label-container">
+            <p class="control-bar__control-label">Tone</p>
           </div>
-          <!-- CONTROL -->
-          <input name="tone" id="tone" type="range" min="40" max="109" value="65" step="1" aria-valuemin="40" aria-valuemax="109" aria-valuenow="65">
+
+          <div class="control-bar__control control-bar__control--ctrY">
+            <input class="control-bar__slider range-slider js-tone-control" name="tone" type="range" role="slider" min="40" max="109" value="65" step="1" aria-valuemin="40" aria-valuemax="109" aria-valuenow="65">
+          </div>
         </div>
 
-        <!-- FULL ATTRACTION SELECTOR -->
-        <div class="control-element">
+        <!-- ATTRACTION SELECTOR -->
+        <div class="control-bar__control-container bp1-hidden">
+
           <!-- LABEL -->
-          <div class="control-label-container">
-            <label class="control-label">Attraction</label>
+          <div class="control-bar__control-label-container">
+            <p class="control-bar__control-label">Attraction</p>
           </div>
 
-          <!-- TOGGLE GROUP -->
-          <div class="toggle-group attraction-selector bp736-hidden">
-            <button name="attraction-selector" value="0" type="button" class="toggle selected">
-                <span class="control-ui-label">Color</span>
+          <!-- SELECTION OPTIONS -->
+          <div class="control-bar__control control-bar__control--toggle-group js-attraction-selector">
+            <button class="control-bar__btn btn btn--toggle btn--toggle-selected" name="attration" value="0" type="button">
+                Color
             </button>
-            <button name="attraction-selector" value="1" type="button" class="toggle">
-                <span class="control-ui-label">Shape</span>
+            <button class="control-bar__btn btn btn--toggle" name="attraction" value="1" type="button">
+                Shape
             </button>
-            <button name="attraction-selector" value="2" type="button" class="toggle">
-                <span class="control-ui-label">Unlike</span>
+            <button class="control-bar__btn btn btn--toggle" name="attraction" value="2" type="button">
+                Unlike
             </button>
-            <button name="attraction-selector" value="3" type="button" class="toggle">
-                <span class="control-ui-label">None</span>
+            <button class="control-bar__btn btn btn--toggle" name="attraction" value="3" type="button">
+                None
             </button>
-          </div>
 
-          <!-- MINI ATTRACTION SELECTOR -->
-          <button type="button" class="bp736-visible attraction-selector-mini button--fixed-size" name="attraction-selector-mini" value="0">
-            <span class="control-ui-label attraction-mini-label">Color</span>
-          </button>
+          </div>
         </div>
 
-        <!-- ABOUT MODAL BUTTON -->
-        <div class="btn-element">
-          <!-- LABEL -->
-          <div class="control-label-container">
-            <label for="about-modal-open" class="control-label">Info</label>
+        <!-- SMALL SCREEN ATTRACTION SELECTOR -->
+        <div class="control-bar__control-container control-bar__control-container--btn bp1-visible">
+          <div class="control-bar__control-label-container">
+            <p class="control-bar__control-label">Force</p>
           </div>
 
-          <button id="about-modal-open" class="icon-button info-btn" type="button" name="about"></button>
+          <div class="control-bar__control">
+            <button class="control-bar__btn btn js-attraction-selector-mini" name="attraction" type="button" aria-label="Toggle Attraction Force">
+              Color
+            </button>
+          </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div class="control-bar__control-container control-bar__control-container--btn">
+          <div class="control-bar__control-label-container">
+            <p class="control-bar__control-label">Info</p>
+          </div>
+
+          <div class="control-bar__control">
+            <button class="control-bar__btn btn btn--icon btn--info js-about-open-btn" type="button" name="info" aria-label="Information"></button>
+          </div>
         </div>
 
       </div>
-    </div>
+    </section>
 
     <!-- ABOUT MODAL  -->
-    <div id="about-modal" class="modal">
-      <button id="about-modal-close" class="icon-button close-btn" type="button" name="Close"></button>
+    <div class="about">
 
-      <div class="about-content">
-        <!-- TITLE -->
-        <div class="content-section">
-          <h1>Bubble Galaxy</h1>
-        </div>
+      <!-- CLOSE BUTTON -->
+      <div class="about__close-btn-container">
+        <button class="about__close-btn btn btn--icon btn--close js-about-close-btn" type="button" name="Close" aria-label="Close">
+        </button>
+      </div>
+
+      <!-- ABOUT CONTENT -->
+      <section class="about__content-container">
+
+        <!-- PROJECT TITLE -->
+        <section class="about__content-section">
+          <h2>Bubble Galaxy</h2>
+        </section>
 
         <!-- HOW TO PLAY -->
-        <div class="content-section">
-          <!-- <h2>About Bubble Galaxy</h2> -->
-          <p class="content">Bubble Galaxy is a generative sound experience. In Bubble Galaxy, each Bubble is on a mission to separate itself from most of the other Bubbles. At the same time, Bubbles are seeking out a subset of other Bubbles (controlled by you!).</p>
+        <section class="about__content-section">
+          <p>Bubble Galaxy is a generative sound experience. In Bubble Galaxy, each Bubble is on a mission to separate itself from most of the other Bubbles. At the same time, Bubbles are seeking out a subset of other Bubbles (controlled by you!).</p>
 
-          <p class="content">Bubbles make sounds when they get too close to each other (at a distance relative to the size of your web browser). The tones that play are spread across four keys of increasing frequency, based on the root tone (controlled by the tone slider). Each key features the same set of intervals of its root, but the root can be an octave, fourth, or fifth above the root tone.</p>
+          <p>Bubbles make sounds when they get too close to each other (at a distance relative to the size of your web browser). The tones that play are spread across four keys of increasing frequency, based on the root tone (controlled by the tone slider). Each key features the same set of intervals of its root, but the root can be an octave, fourth, or fifth above the root tone.</p>
 
-          <p class="content">Bubble Galaxy was created by <a href="https://chrisschnaars.com/">Chris Schnaars</a>. Please <a href="mailto:hello@chrisschnaars.com">get in touch</a> with any questions, problems, or feedback. You can find more info on Bubble Galaxy at <a href="https://github.com/chrisschnaars/bubble-galaxy">Github</a> and more generative sound tools <a href="https://schnaars.xyz/">here</a>.</p>
-        </div>
+          <p>Bubble Galaxy was created by <a href="https://chrisschnaars.com/">Chris Schnaars</a>. Please <a href="mailto:hello@chrisschnaars.com">get in touch</a> with any questions, problems, or feedback. You can find more info on Bubble Galaxy at <a href="https://github.com/chrisschnaars/bubble-galaxy">Github</a> and more generative sound tools <a href="https://schnaars.xyz/">here</a>.</p>
+        </section>
 
+      <!-- END ABOUT CONTENT -->
+      </section>
+
+    <!-- END ABOUT MODAL -->
     </div>
-  </div>
+
 
   <!-- Load Main Script  -->
   <script src="js/main.js"></script>
