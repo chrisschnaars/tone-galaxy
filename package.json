@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "npx @11ty/eleventy --input=src --output=_site --serve",
-    "build": "npx @11ty/eleventy"
+    "dev": "npx gulp && npx @11ty/eleventy --input=src --output=_site --serve",
+    "build": "npx gulp && npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
