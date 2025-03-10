@@ -1,0 +1,215 @@
+@import url("reset.css");
+@import url("range-slider.css");
+
+:root {
+    --white: #FFFFFF;
+    --gray-1: #F6F7F9;
+    --gray-2: #D8DCE4;
+    --gray-3: #ABB1BD;
+    --gray-4: #5E6778;
+    --gray-5: #24272E;
+    --black: #191B1F;
+
+    --color-text: #fff;
+    --color-text-muted: #ABB1BD;
+    --color-bg: #0E0F11;
+    --color-btn-bg: #32353E;
+    --color-btn-bg-hover: #444855;
+    --color-btn-bg-active: #5E6778;
+    --color-btn-border: #444855;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow: hidden;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    word-wrap: break-word;
+  }
+
+  canvas {
+    vertical-align: top;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;;
+  }
+
+  a {
+    color: var(--color-text);
+    text-decoration-color: var(--color-text);;
+  }
+
+  button,
+  .btn {
+    align-items: center;
+    background-color: var(--color-btn-bg);
+    border: 1px solid var(--color-btn-border);
+    border-radius: 6px;
+    color: var(--color-text);
+    cursor: pointer;
+	  display: inline-flex;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 40px;
+    justify-content: center;
+    margin: 0;
+    padding: 0 1.25rem;
+    text-align: center;
+	  text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: var(--color-btn-bg-hover);
+    }
+  }
+
+  .btn-selected {
+    background-color: var(--color-btn-bg-active);
+    
+    &:hover {
+      background-color: var(--color-btn-bg-active);
+    }
+  }
+
+  .btn-cta {
+    height: 48px;
+    width: 100%;
+  }
+
+  .btn-play-toggle {
+    border-radius: 100%;
+    height: 44px;
+    padding: 0;
+    width: 44px;
+
+    > svg {
+      height: 1.375rem;
+      width: 1.375rem;;
+    }
+  }
+
+  label,
+  .label {
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  #main-container {
+    height: 100vh;
+    width: 100%
+  }
+
+  .bg-glass {
+    background: rgba(50, 53, 62, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(50, 53, 62, 0.25);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Onboarding */
+  .onboarding-wrapper {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .onboarding {
+    max-width: 500px;
+    padding: 2rem;
+    width: 100%;
+  }
+
+  /* Control bar */
+  .control-bar-wrapper {
+    background-color: transparent;
+    bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  .control-bar {
+    align-items: center;
+    display: flex;
+    gap: 1.25rem;
+    margin: 0 1rem;
+    padding: 1rem 1.5rem;
+
+    @media (min-width: 600px) {
+      gap: 3rem;
+    }
+  }
+
+  .control-bar-control {
+    align-items: center;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .attraction-toggles {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* About modal */
+  .about-container {
+    position: relative;
+  }
+
+  .about {
+    bottom: 4rem;
+    
+    padding: 2rem;
+    position: absolute;
+    right: -1.5rem;
+    width: 480px;
+  }
+
+  /* Genral purpose utilities */
+  .flex-1 {
+    flex: 1;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .hidden-mobile {
+    display: none;
+
+    @media (min-width: 600px) {
+      display: flex;
+    }
+  }
+
+  .hidden-desktop {
+    display: block;
+
+    @media (min-width: 600px) {
+      display: none;
+    }
+  }

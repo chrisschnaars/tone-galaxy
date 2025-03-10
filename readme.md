@@ -1,7 +1,7 @@
-# Bubble Galaxy
-Bubble Galaxy is a generative sound experience. In Bubble Galaxy, each Bubble (which can take the form of ellipses, rectangles, and triangles) is on a mission to separate itself from most of the other Bubbles. At the same time, Bubbles are seeking out a subset of other Bubbles (controlled by you!).
+# Tone Galaxy
+Tone Galaxy is a generative sound experience. In Tone Galaxy, each shape is on a mission to separate itself from most of the other Bubbles. At the same time, Bubbles are seeking out a subset of other shapes (determined by you!).
 
-Bubbles make sounds when they get within a predefined distance relative to the size of your web browser. This means that each moment of Bubble Galaxy is likely a completely unique sound experience.
+Shapes make sounds when they get within a predefined distance relative to the size of your web browser. This means that each moment of Bubble Galaxy is likely a completely unique sound experience.
 
 ## How to Play
 In general, you don't need to do much here, which admittedly may not very fun. This was designed more as a passive music-generation experience. Still, there are a few things you can do:
@@ -16,7 +16,7 @@ In general, you don't need to do much here, which admittedly may not very fun. T
 ## Audio Notes
 
 ### Tone Assignment
-Each Bubble is assigned a tone across four different keys, all based on the root tone (controlled by the tone slider).
+Each shapes is assigned a tone across four different keys, all based on the root tone (controlled by the tone slider).
 
 Each key increases in frequency in the following manner:
 - Key 1: Root tone
@@ -24,7 +24,7 @@ Each key increases in frequency in the following manner:
 - Key 3: One octave above root
 - Key 4: Fourth above octave of root
 
-Each key features the same set of intervals: root, third, fourth, fifth, octave.
+Each key features the same set of intervals: root, third, fourth, fifth, minor seventh, octave.
 
 ### Stereo
 If you're using headphones or a quality hifi system, you should notice that the placement of the audio output within the stereo field changes with each tone. The amount of panning to the left or right is dependent on the position of the Bubble.
