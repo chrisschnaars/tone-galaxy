@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tone galaxy</title>
+    <meta name="description" content="BuTonebble Galaxy is a space-aged generative music-making tool for kids and adults." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖌️</text></svg>">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Onboarding -->
+    <div class="onboarding-wrapper js-onboarding">
+      <div class="onboarding bg-glass">
+        <h1 class="onboarding__title">Welcome to Tone Galaxy</h1>
+        <p>
+          Tone galaxy is a space-aged generative sound tool for kids and adults. Watch the shapes navigate the ether in search of a mate, making a pleasing tone when it finally gets close enough.  
+        </p>
+        <p>
+          Shapes are also trying to stay away from anything it is not attracted to, creating a playful dance between each element.
+        </p>
+        <button class="btn-cta js-onboarding-cta">Start</button>
+      </div>
+    </div>
+
+    <!-- Canvas container -->
+    <div id="main-container">
+    </div>
+
+    <!-- Control bar -->
+    <div class="control-bar-wrapper">
+      <div class="control-bar bg-glass">
+
+        <!-- Play button -->
+        <button class="btn btn-play-toggle js-play-toggle" type="button" name="mute" aria-label="Play">  
+          <svg viewBox="0 0 256 256" fill="#fff" class="js-pause-icon">
+            <path d="M216 48v160a16 16 0 0 1-16 16h-40a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h40a16 16 0 0 1 16 16ZM96 32H56a16 16 0 0 0-16 16v160a16 16 0 0 0 16 16h40a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16Z"/>
+          </svg>
+        
+          <svg viewBox="0 0 256 256" fill="#fff" class="js-play-icon hidden">
+            <path d="M240 128a15.74 15.74 0 0 1-7.6 13.51L88.32 229.65a16 16 0 0 1-16.2.3A15.86 15.86 0 0 1 64 216.13V39.87a15.86 15.86 0 0 1 8.12-13.82 16 16 0 0 1 16.2.3l144.08 88.14A15.74 15.74 0 0 1 240 128Z"/>
+          </svg>
+          
+        </button>
+        
+        <!-- Tone control -->
+        <div class="control-bar-control flex-1">
+          <label for="tone">
+            Tone
+          </label>
+          
+          <input class="control-bar__slider range-slider js-tone-control" id="tone" name="tone" type="range" role="slider" min="40" max="109" value="65" step="1" aria-valuemin="40" aria-valuemax="109" aria-valuenow="65">            
+        </div>
+  
+        <!-- Attractor selector -->
+        <div class="control-bar-control flex-1 hidden-mobile">
+  
+          <!-- TODO: a11y for segmented button -->
+          <div class="label">Attraction</div>
+  
+          <div class="attraction-toggles js-attraction-selector">
+            <button class="btn-selected js-attraction-toggle" name="attration" value="0" type="button">
+                Color
+            </button>
+            <button class="js-attraction-toggle" name="attraction" value="1" type="button">
+                Shape
+            </button>
+            <button class="js-attraction-toggle" name="attraction" value="2" type="button">
+                Unlike
+            </button>
+            <button class="js-attraction-toggle" name="attraction" value="3" type="button">
+                None
+            </button>
+          </div>
+        </div>
+  
+        <!-- Attractor selector for smaller screens -->
+        <div class="control-bar-control hidden-desktop">
+          <button class="js-attraction-selector-mini" name="attraction" type="button" aria-label="Toggle Attraction Force">
+            Color
+          </button>
+        </div>
+  
+        <!-- About modal trigger --> 
+        <div class="about-container">
+          <!-- About modal -->
+          <div class="about bg-glass hidden js-about-panel">
+            <p>Tone Galaxy is a generative sound experience, where each shape is on a mission to separate itself from most of the other Bubbles. At the same time, shapes are seeking out a subset of other shapes (determined by you!).</p>
+
+            <p>Shapes make sounds when they get too close to each other (at a distance relative to the size of your web browser). The tones that play are spread across four keys, based on the root tone (controlled by the tone slider). Each key features the same set of intervals of its root, but the root can be an octave, fourth, or fifth above the root tone.</p>
+
+            <p>Shape Galaxy was created by <a href="https://chrisschnaars.com/">Chris Schnaars</a>. You can find more info on Tone Galaxy at <a href="https://github.com/chrisschnaars/bubble-galaxy">Github</a> and more generative sound tools <a href="https://schnaars.xyz/">here</a>.</p>
+          </div>
+
+          <button class="js-about-open-btn" type="button" name="info" aria-label="Information">
+            Info
+          </button>  
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>
