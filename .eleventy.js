@@ -1,10 +1,8 @@
-const EleventyHtmlBasePlugin = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "src/assets/icons/": "./assets/icons" });
     eleventyConfig.addPassthroughCopy({ "src/css/": "./" });
     eleventyConfig.addWatchTarget('./src/js/');
-
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
     
     return {
