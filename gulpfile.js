@@ -1,10 +1,10 @@
-const gulp = require('gulp');
-const babel = require('gulp-babel');
-const concat = require('gulp-concat');
-const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
+import gulp from 'gulp';
+import babel from 'gulp-babel';
+import concat from 'gulp-concat';
+import sourcemaps from 'gulp-sourcemaps';
+import uglify from 'gulp-uglify';
 
-exports.default = () => {
+export default function() {
     return (
       gulp
         // GET FILES

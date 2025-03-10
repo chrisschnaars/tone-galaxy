@@ -1,7 +1,7 @@
 {
   "name": "tone-galaxy",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
     "dev": "npx gulp && npx @11ty/eleventy --input=src --output=_site --serve",
     "build": "npx gulp && npx @11ty/eleventy"

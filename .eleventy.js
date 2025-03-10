@@ -1,4 +1,4 @@
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "src/assets/icons/": "./assets/icons" });
     eleventyConfig.addPassthroughCopy({ "src/css/": "./" });
     eleventyConfig.addWatchTarget('./src/js/');
