@@ -33,15 +33,6 @@ function setupInteraction() {
     updateAttractionButtoneStatus(id);
   }, false);
   
-  // Mobile attraction selector
-  document.querySelector(".js-attraction-selector-mini").addEventListener('click', function(e){
-    const id = Number(e.target.value) + 1;
-    updateAttractForces(id);
-    updateAttractionToggleStatus(id);
-    updateAttractionButtoneStatus(id);  
-    e.target.blur();
-  }, false);
-
   // Info button
   document.querySelector(".js-about-open-btn").addEventListener("click", function() {
     toggleInfoPanel();

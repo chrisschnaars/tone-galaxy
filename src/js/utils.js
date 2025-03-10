@@ -1,9 +1,14 @@
 // End onboarding and remove element
 function endOnboarding() {
+  // remove onboarding modal
   const el = document.querySelector('.js-onboarding');
   if (el) {
     el.remove();
   }
+
+  // show control bar
+  const controlBar = document.querySelector('.control-bar-wrapper');
+  controlBar.classList.remove('control-bar-wrapper-onboarding');
 }
   
 // Set the size of shapes based on screen size

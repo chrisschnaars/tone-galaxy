@@ -32,7 +32,7 @@
     </div>
 
     <!-- Control bar -->
-    <div class="control-bar-wrapper">
+    <div class="control-bar-wrapper control-bar-wrapper-onboarding">
       <div class="control-bar bg-glass">
 
         <!-- Play button -->
@@ -48,7 +48,7 @@
         </button>
         
         <!-- Tone control -->
-        <div class="control-bar-control flex-1">
+        <div class="control-bar-control flex-1 hidden-md">
           <label for="tone">
             Tone
           </label>
@@ -57,36 +57,29 @@
         </div>
   
         <!-- Attractor selector -->
-        <div class="control-bar-control flex-1 hidden-mobile">
+        <div class="control-bar-control flex-1">
   
           <!-- TODO: a11y for segmented button -->
-          <div class="label">Attraction</div>
+          <div class="label hidden-xs">Attraction</div>
   
-          <div class="attraction-toggles js-attraction-selector">
-            <button class="btn-selected js-attraction-toggle" name="attration" value="0" type="button">
+          <div class="toggle-btn-container js-attraction-selector">
+            <button class="toggle-btn btn-selected js-attraction-toggle" name="attration" value="0" type="button">
                 Color
             </button>
-            <button class="js-attraction-toggle" name="attraction" value="1" type="button">
+            <button class="toggle-btn js-attraction-toggle" name="attraction" value="1" type="button">
                 Shape
             </button>
-            <button class="js-attraction-toggle" name="attraction" value="2" type="button">
+            <button class="toggle-btn js-attraction-toggle" name="attraction" value="2" type="button">
                 Unlike
             </button>
-            <button class="js-attraction-toggle" name="attraction" value="3" type="button">
+            <button class="toggle-btn js-attraction-toggle hidden-xs" name="attraction" value="3" type="button">
                 None
             </button>
           </div>
         </div>
   
-        <!-- Attractor selector for smaller screens -->
-        <div class="control-bar-control hidden-desktop">
-          <button class="js-attraction-selector-mini" name="attraction" type="button" aria-label="Toggle Attraction Force">
-            Color
-          </button>
-        </div>
-  
         <!-- About modal trigger --> 
-        <div class="about-container">
+        <div class="about-containe hidden-md">
           <!-- About modal -->
           <div class="about bg-glass hidden js-about-panel">
             <p>Tone Galaxy is a generative sound experience, where each shape is on a mission to separate itself from most of the other Bubbles. At the same time, shapes are seeking out a subset of other shapes (determined by you!).</p>
